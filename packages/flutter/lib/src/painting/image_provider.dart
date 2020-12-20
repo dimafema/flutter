@@ -668,7 +668,7 @@ abstract class AssetBundleImageProvider extends ImageProvider<AssetBundleImageKe
       data = await key.bundle.load(key.name);
     } on FlutterError {
       PaintingBinding.instance!.imageCache!.evict(key);
-      rethrow;
+    rethrow;
     }
     // `key.bundle.load` has a non-nullable return type, but might be null when
     // running with weak checking, so we need to null check it anyway (and
